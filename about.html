@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About TGDrive — Learn how TGDrive uses the Telegram MTProto API to provide free unlimited cloud storage directly in your browser with no backend server."/>
+  <title>About TGDrive — Free Unlimited Cloud Storage via Telegram</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8889180337134009" crossorigin="anonymous"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f1117;color:#e2e8f0;line-height:1.7}
+    header{background:#1e2433;border-bottom:1px solid #2d3748;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:#e2e8f0;font-weight:700;font-size:1.1rem}
+    .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#2AABEE,#1a7fbf);border-radius:8px;display:flex;align-items:center;justify-content:center}
+    nav a{color:#64748b;text-decoration:none;font-size:.875rem;margin-left:1.5rem}
+    nav a:hover{color:#94a3b8}
+    main{max-width:760px;margin:0 auto;padding:4rem 2rem}
+    h1{font-size:2.25rem;font-weight:700;margin-bottom:1rem;line-height:1.2}
+    h2{font-size:1.35rem;font-weight:600;margin:2.5rem 0 .75rem;color:#cbd5e1}
+    p{color:#94a3b8;margin-bottom:1rem;font-size:.975rem}
+    ul{color:#94a3b8;padding-left:1.5rem;margin-bottom:1rem;font-size:.975rem}
+    li{margin-bottom:.4rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.5rem 0}
+    .card{background:#1e2433;border:1px solid #2d3748;border-radius:12px;padding:1.25rem}
+    .card h3{font-size:.95rem;font-weight:600;color:#e2e8f0;margin-bottom:.5rem}
+    .card p{font-size:.85rem;margin-bottom:0}
+    .badge{display:inline-block;border:1px solid #2d3748;color:#94a3b8;border-radius:6px;padding:.25rem .65rem;font-size:.78rem;margin:.2rem}
+    .mono{background:#1e2433;border:1px solid #2d3748;border-radius:10px;padding:1.25rem 1.5rem;font-family:'Courier New',monospace;font-size:.82rem;color:#64748b;line-height:1.8;margin:1rem 0}
+    .mono .hl{color:#94a3b8}
+    .mono .dim{color:#3d4f6b}
+    .btn{display:inline-block;background:#2AABEE;color:#fff;padding:.6rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:.875rem;margin-top:.5rem}
+    footer{background:#1e2433;border-top:1px solid #2d3748;padding:1.5rem 2rem;text-align:center;font-size:.8rem;color:#3d4f6b}
+    footer a{color:#3d4f6b;text-decoration:none;margin:0 .75rem}
+    footer a:hover{color:#64748b}
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">
+    <div class="logo-icon">
+      <svg width="20" height="20" viewBox="0 0 128 128" fill="none">
+        <rect x="22" y="36" width="84" height="56" rx="8" stroke="white" stroke-width="6"/>
+        <circle cx="64" cy="64" r="14" stroke="white" stroke-width="6"/>
+        <circle cx="64" cy="64" r="4" fill="white"/>
+        <line x1="86" y1="42" x2="72" y2="58" stroke="white" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    TGDrive
+  </a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="https://github.com/fbpatel003/tgdrive" target="_blank" rel="noreferrer">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <h1>About TGDrive</h1>
+  <p>TGDrive is a free, open-source, browser-based cloud storage application that uses your existing Telegram account as unlimited file storage — with no subscriptions, no server costs, and no middleman between you and your data.</p>
+
+  <h2>What is TGDrive?</h2>
+  <p>Telegram is one of the world's largest messaging platforms with globally distributed servers. Every Telegram account comes with effectively unlimited cloud storage — files sent to your "Saved Messages" or private channels persist on Telegram's servers indefinitely, accessible from any device worldwide.</p>
+  <p>TGDrive provides a familiar Google Drive-style interface on top of this storage. You create folders, upload files of any type up to 2 GB each, preview images in the browser, and stream videos — all through a clean, fast web interface with no installation required.</p>
+  <p>Unlike traditional cloud storage services such as Google Drive, Dropbox, or OneDrive, TGDrive has no backend server of its own. Your browser connects directly to Telegram's servers using the official Telegram MTProto API — the same protocol used by Telegram's own mobile and desktop apps. Your files, credentials, and session data never pass through TGDrive infrastructure because there is no TGDrive infrastructure.</p>
+
+  <h2>How It Works</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🔌 Direct MTProto Connection</h3>
+      <p>Your browser opens a WebSocket connection directly to Telegram's servers using the MTProto protocol. No proxy, no relay, no middleman. Data flows between your browser and Telegram only.</p>
+    </div>
+    <div class="card">
+      <h3>📁 Folders as Private Channels</h3>
+      <p>Each folder you create in TGDrive becomes a private Telegram channel tagged [TGDrive]. Files are stored as document attachments inside these channels with a JSON metadata caption preserving the original filename, size, and MIME type.</p>
+    </div>
+    <div class="card">
+      <h3>🔐 Local Session Storage</h3>
+      <p>Your Telegram API credentials and session token are stored exclusively in your browser's IndexedDB — a local browser database. They are never transmitted to any TGDrive server because there isn't one.</p>
+    </div>
+    <div class="card">
+      <h3>🎬 True Video Streaming</h3>
+      <p>Videos are streamed using a Service Worker that intercepts HTTP Range requests from the browser's native video player. Only the chunks needed for the current playback position are fetched from Telegram — memory-efficient, like professional streaming services.</p>
+    </div>
+    <div class="card">
+      <h3>🖼️ Image Thumbnails</h3>
+      <p>Image previews are generated using Telegram's built-in thumbnail system. Thumbnails are cached in IndexedDB and automatically evicted after 30 days to keep local storage clean.</p>
+    </div>
+    <div class="card">
+      <h3>☁️ Telegram as the Backend</h3>
+      <p>Telegram's global infrastructure handles all storage, redundancy, and availability. TGDrive is purely a frontend UI layer — a browser interface over the Telegram API with no server-side component.</p>
+    </div>
+  </div>
+
+  <h2>Architecture</h2>
+  <div class="mono">
+    <span class="hl">Your Browser</span><br>
+    ├── React UI <span class="dim">(TGDrive interface)</span><br>
+    ├── GramJS <span class="dim">(Telegram MTProto client — WebSocket)</span><br>
+    ├── Service Worker <span class="dim">(video range request handler)</span><br>
+    ├── IndexedDB <span class="dim">(session + metadata + thumbnail cache)</span><br>
+    └── WebSocket ──────────────────► <span class="hl">Telegram Servers</span><br>
+    <span class="dim">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Your files stored here permanently</span><br><br>
+    <span class="dim"># No TGDrive server exists between you and Telegram</span>
+  </div>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Unlimited storage — Telegram imposes no quota on user accounts</li>
+    <li>Up to 2 GB per individual file</li>
+    <li>Folder organisation with create, rename, and delete support</li>
+    <li>Multi-file drag-and-drop upload with real-time progress</li>
+    <li>Image preview with lazy-loaded thumbnails cached locally</li>
+    <li>Video streaming via Service Worker — plays while downloading, no full-file buffering</li>
+    <li>File search across all folders and files stored in local cache</li>
+    <li>Persistent login — session stored in IndexedDB, survives page refreshes</li>
+    <li>No auto-download on Telegram mobile — files stored as documents, not media</li>
+    <li>Responsive design — works on desktop and mobile browsers</li>
+    <li>Night theme — easy on the eyes for extended use</li>
+  </ul>
+
+  <h2>Technology Stack</h2>
+  <div>
+    <span class="badge">React 18</span>
+    <span class="badge">TypeScript</span>
+    <span class="badge">Vite</span>
+    <span class="badge">GramJS</span>
+    <span class="badge">MTProto API</span>
+    <span class="badge">Service Workers</span>
+    <span class="badge">Dexie.js (IndexedDB)</span>
+    <span class="badge">Tailwind CSS</span>
+    <span class="badge">DaisyUI</span>
+    <span class="badge">React Router v6</span>
+    <span class="badge">GitHub Pages</span>
+    <span class="badge">GitHub Actions</span>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h2 style="font-size:1rem;margin-top:1.5rem">Is TGDrive affiliated with Telegram?</h2>
+  <p>No. TGDrive is an independent, community-built open-source project. It uses Telegram's official public API but is not affiliated with, endorsed by, or officially supported by Telegram Messenger Inc.</p>
+
+  <h2 style="font-size:1rem;margin-top:1.5rem">What is the storage limit?</h2>
+  <p>Telegram does not impose a storage quota on user accounts. Individual files are limited to 2 GB each — significantly higher than the 100 MB limit on free Google Drive uploads via API. You can upload as many files as you want across as many folders as you need.</p>
+
+  <h2 style="font-size:1rem;margin-top:1.5rem">What happens if I clear my browser data?</h2>
+  <p>Your local session, cached file metadata, and thumbnails are cleared. You will need to log in again with your Telegram credentials. However, all your files remain permanently on Telegram's servers and will reappear immediately after re-authentication — nothing is lost.</p>
+
+  <h2 style="font-size:1rem;margin-top:1.5rem">Is my data safe?</h2>
+  <p>Your files are as safe as your Telegram account. TGDrive never sees your data — everything flows directly between your browser and Telegram's infrastructure. We strongly recommend enabling two-factor authentication on your Telegram account for additional security.</p>
+
+  <h2 style="font-size:1rem;margin-top:1.5rem">Can I use TGDrive for free?</h2>
+  <p>Yes. TGDrive is completely free to use. The service is sustained by non-intrusive Google AdSense advertisements displayed on the drive interface. The login, about, privacy, and terms pages are ad-free.</p>
+
+  <h2 style="font-size:1rem;margin-top:1.5rem">Does TGDrive work on mobile browsers?</h2>
+  <p>Yes. TGDrive is a fully responsive progressive web application and works on Android and iOS browsers. Chrome and Firefox provide the best experience. Safari on iOS has some limitations with Service Worker video streaming.</p>
+
+  <h2>Open Source</h2>
+  <p>TGDrive is fully open-source under the MIT License. You can inspect every line of code, self-host your own instance, or contribute improvements. Since TGDrive has no backend, self-hosting means simply serving the static build output — deployable for free on GitHub Pages, Vercel, Netlify, or any static file host.</p>
+  <a class="btn" href="https://github.com/fbpatel003/tgdrive" target="_blank" rel="noreferrer">View Source on GitHub →</a>
+
+  <h2>Built By</h2>
+  <p>TGDrive was designed and built by <a href="https://github.com/fbpatel003" style="color:#2AABEE" target="_blank" rel="noreferrer">Fenil Patel</a> as an open-source tool for personal and community use. Bug reports, feature suggestions, and pull requests are welcome via <a href="https://github.com/fbpatel003/tgdrive/issues" style="color:#2AABEE" target="_blank" rel="noreferrer">GitHub Issues</a>.</p>
+</main>
+
+<footer>
+  <p>© 2025 TGDrive — Built by Fenil Patel</p>
+  <p style="margin-top:.5rem">
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="https://github.com/fbpatel003/tgdrive" target="_blank" rel="noreferrer">GitHub</a>
+  </p>
+</footer>
+
+</body>
+</html>
